@@ -367,9 +367,6 @@ public class DefaultOptions {
         // Override the default mappings and set the initial key codes, if the key is not known yet
         for (KeyBinding keyBinding : Minecraft.getMinecraft().gameSettings.keyBindings) {
             if (defaultKeys.containsKey(keyBinding.getKeyDescription())) {
-                DefaultBinding defaultBinding = defaultKeys.get(keyBinding.getKeyDescription());
-                keyBinding.keyCodeDefault = defaultBinding.keyCode;
-                ReflectionHelper.setPrivateValue(KeyBinding.class, keyBinding, defaultBinding.modifier, "keyModifier");
                 if (!knownKeys.contains(keyBinding.getKeyDescription())) {
                     keyBinding.setKeyModifierAndCode(keyBinding.getKeyModifierDefault(), keyBinding.getKeyCodeDefault());
                     knownKeys.add(keyBinding.getKeyDescription());
