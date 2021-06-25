@@ -2,7 +2,7 @@
 {
   "modid": "defaultoptions",
   "name": "Default Options",
-  "description": "A way for modpacks to ship a default (key) configuration without having to include an options.txt file.",
+  "description": "A way for modpacks to ship a default (key) configuration without having to include an options.txt file. Patched by zCri",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "http://blay09.net",
