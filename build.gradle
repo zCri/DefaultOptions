@@ -8,20 +8,15 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
-
 apply from: 'gradle/scripts/common.gradle'
 apply from: 'gradle/scripts/with-at.gradle'
-
 apply from: 'dependencies.gradle'
-
 def BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: "0"
-
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
 }
-
-version = major_version + "." + minor_version + "." + BUILD_NUMBER
+version = major_version + "." + minor_version + "." + BUILD_NUMBER + "-patched"
 group = "net.blay09.mods"
 archivesBaseName = mod_name + "_" + minecraft_version
 
@@ -31,7 +26,6 @@ minecraft {
     useDepAts = true
     mappings = mappings_version
 }
-
 processResources{
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
